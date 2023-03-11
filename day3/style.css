@@ -1,0 +1,106 @@
+/* font  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background: url(images/background.jpg);
+}
+
+body::before{
+    content: "";
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(rgb(97, 66, 66), green, blue, 0.3);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: 270px;
+    background: linear-gradient(-25deg, black, #444, black);
+    border-radius: 15px;
+    color: white;
+    overflow: hidden;
+    text-shadow: 0 2px 0 black;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 10px 50px -10px black;
+    animation: card_bounce 1s alternate infinite;
+}
+
+@keyframes card_bounce {
+    from{
+        transform: translateY(-20px);
+    }
+}
+
+.card::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    border-radius: 100%;
+    box-shadow: 0 0 50px 10px rgba(38, 38, 38, 0.95) inset;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card-top, .card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-top svg{
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+}
+
+.card-title{
+    font-size: 1.8rem;
+    z-index: 1;
+}
+
+.card-center{
+    z-index: 1;
+}
+
+.card-center img{
+    width: 80px;
+    padding-left: 2rem;
+}
+
+.card-bottom-left, .card-bottom-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bottom-left{
+    gap: 0.7rem;
+}
+
+.card-number{
+    font-family: "Exo", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+.name{
+    font-family: 'Pacifico', cursive;
+}
